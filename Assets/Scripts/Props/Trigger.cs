@@ -38,7 +38,6 @@ public class Trigger : MonoBehaviour
         {
             return;
         }
-        Debug.Log(1);
 
         HandleTriggerEnterEvent();
 
@@ -50,7 +49,7 @@ public class Trigger : MonoBehaviour
         {
             return;
         }
-        Debug.Log(2);
+
         HandleTriggerExitEvent();
     }
 }
