@@ -1,0 +1,380 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 26490,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 5237,
+      "max": [
+        0.645225524902344,
+        0.609933018684387,
+        0.243668079376221
+      ],
+      "min": [
+        -0.645225465297699,
+        -0.256897926330566,
+        -0.160850256681442
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 5237,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 5237,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5125,
+      "count": 15369,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 3065,
+      "max": [
+        0.295111924409866,
+        1.00000011920929,
+        0.26775062084198
+      ],
+      "min": [
+        -0.310616940259933,
+        0.0682214498519897,
+        -0.298210799694061
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 3065,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 3065,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5125,
+      "count": 9144,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 1897,
+      "max": [
+        0.192744940519333,
+        0.312517762184143,
+        0.298210799694061
+      ],
+      "min": [
+        -0.192747011780739,
+        -0.999999940395355,
+        -0.119644202291965
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "count": 1897,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5126,
+      "count": 1897,
+      "type": "VEC2"
+    }
+  ],
+  "asset": {
+    "generator": "Substance Painter 2019.2.1",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 105960,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 62844,
+      "byteOffset": 105960,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 62844,
+      "byteOffset": 168804,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 41896,
+      "byteOffset": 231648,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 61476,
+      "byteOffset": 273544,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 36780,
+      "byteOffset": 335020,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 36780,
+      "byteOffset": 371800,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 24520,
+      "byteOffset": 408580,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 36576,
+      "byteOffset": 433100,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 22764,
+      "byteOffset": 469676,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 22764,
+      "byteOffset": 492440,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 15176,
+      "byteOffset": 515204,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 530380,
+      "uri": "girl.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "head_baseColor.png"
+    },
+    {
+      "uri": "head_occlusionRoughnessMetallic.png"
+    },
+    {
+      "uri": "head_normal.png"
+    },
+    {
+      "uri": "leg_baseColor.png"
+    },
+    {
+      "uri": "leg_occlusionRoughnessMetallic.png"
+    },
+    {
+      "uri": "leg_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "OPAQUE",
+      "name": "body",
+      "pbrMetallicRoughness": {}
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "name": "head",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "name": "leg",
+      "normalTexture": {
+        "index": 5
+      },
+      "occlusionTexture": {
+        "index": 4
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 3
+        },
+        "metallicRoughnessTexture": {
+          "index": 4
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "low",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 2,
+            "POSITION": 1,
+            "TEXCOORD_0": 3
+          },
+          "indices": 0,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "low",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TEXCOORD_0": 7
+          },
+          "indices": 4,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "low",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 10,
+            "POSITION": 9,
+            "TEXCOORD_0": 11
+          },
+          "indices": 8,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "girl_low.obj",
+      "scale": [
+        47.8230476379395,
+        47.8230476379395,
+        47.8230476379395
+      ],
+      "translation": [
+        -0.0405502319335938,
+        47.9664459228516,
+        -5.78905010223389
+      ]
+    },
+    {
+      "children": [
+        2,
+        3,
+        4
+      ],
+      "name": "g low"
+    },
+    {
+      "mesh": 0,
+      "name": "low"
+    },
+    {
+      "mesh": 1,
+      "name": "low"
+    },
+    {
+      "mesh": 2,
+      "name": "low"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9985,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    },
+    {
+      "sampler": 0,
+      "source": 5
+    }
+  ]
+}
