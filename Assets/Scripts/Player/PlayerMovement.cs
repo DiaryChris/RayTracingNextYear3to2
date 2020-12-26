@@ -2,9 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlayerState
+{
+    Walking,
+    Pushing,
+    Falling
+}
+
 public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
+    public PlayerState pState;
+
     //移动变量
     public float horizontal;
     public float vertical;
@@ -28,6 +37,14 @@ public class PlayerMovement : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody>();
     }
 
+    private void Update()
+    {
+        CheckState();
+
+        bool isPushing = Input.GetKey(KeyCode.F);
+        m_Animator.SetBool("IsPushing", isPushing);
+    }     
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -44,9 +61,15 @@ public class PlayerMovement : MonoBehaviour
         bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
         bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
 
+
+
         //动画
         bool isWalking = hasHorizontalInput || hasVerticalInput;
         m_Animator.SetBool("IsWalking", isWalking);
+
+      
+   
+
 
         //旋转向量
         Vector3 desiredForward =
@@ -67,5 +90,19 @@ public class PlayerMovement : MonoBehaviour
         m_Rigidbody.MovePosition(m_Rigidbody.position + moveSpeed * m_Movement/* * m_Animator.deltaPosition.magnitude*/);
         //旋转
         m_Rigidbody.MoveRotation(m_Rotation);
+    }
+
+
+    void CheckState()
+    {
+        if (Input.GetKey(KeyCode.F))
+        {
+            pState = PlayerState.Pushing;
+        }
+        else if (!Mathf.Approximately(horizontal, 0f) || !Mathf.Approximately(vertical, 0f))
+        {
+            pState = PlayerState.Walking;
+        }
+       
     }
 }

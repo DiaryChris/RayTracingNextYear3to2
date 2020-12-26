@@ -7,7 +7,7 @@ public class Trigger : MonoBehaviour
 {
 
     public Transform trans;
-
+    
     private Color prevColor;
 
     private void Start()
@@ -18,14 +18,18 @@ public class Trigger : MonoBehaviour
         }
     }
 
-    public virtual void HandleTriggerEnterEvent()
+    public virtual void HandleTriggerEnterEvent(Collider other)
+    {
+        prevColor = trans.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
+        trans.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", Color.yellow);
+    }
+    public virtual void HandleTriggerStayEvent(Collider other)
     {
         prevColor = trans.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
         trans.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", Color.yellow);
     }
 
-
-    public virtual void HandleTriggerExitEvent()
+    public virtual void HandleTriggerExitEvent(Collider other)
     {
         trans.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", prevColor);
     }
@@ -39,7 +43,7 @@ public class Trigger : MonoBehaviour
             return;
         }
 
-        HandleTriggerEnterEvent();
+        HandleTriggerEnterEvent(other);
 
     }
 
@@ -50,6 +54,17 @@ public class Trigger : MonoBehaviour
             return;
         }
 
-        HandleTriggerExitEvent();
+        HandleTriggerExitEvent(other);
+    }
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.gameObject.CompareTag("Player"))
+        {
+            return;
+        }
+
+        HandleTriggerStayEvent(other);
     }
 }

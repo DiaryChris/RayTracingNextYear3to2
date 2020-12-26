@@ -13,5 +13,9 @@ public class DeathArea : MonoBehaviour
         {
             GameManager.RestartScene();
         }
+        if (other.gameObject.tag=="Interactive")
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
