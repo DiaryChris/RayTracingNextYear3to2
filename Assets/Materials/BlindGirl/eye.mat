@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1072907837525577208
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -7,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Girl-leg
-  m_Shader: {fileID: 4800000, guid: 4bd47c5695aa8464f9c1502b0d56229b, type: 3}
+  m_Name: eye
+  m_Shader: {fileID: 4800000, guid: 730c3b8ffd3f17d4d8bbeb032ae221bc, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,7 +33,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 0cbac9015eff8274695b8f7c14d67540, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -60,10 +73,10 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _OutlineWidth: 2
+    - _OutlineWidth: 1.5
     - _QueueOffset: 0
-    - _RampSmoothing: 0.001
-    - _RampThreshold: 0.01
+    - _RampSmoothing: 0.1
+    - _RampThreshold: 0.5
     - _ReceiveShadows: 1
     - _ReceiveShadowsOff: 1
     - _RimMax: 1
@@ -71,7 +84,7 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpecularSmoothness: 7.02
+    - _SpecularSmoothness: 0.2
     - _SrcBlend: 1
     - _SubsurfaceDistortion: 0.2
     - _SubsurfacePower: 3
@@ -82,8 +95,8 @@ Material:
     - _UseSpecular: 0
     - _UseSubsurface: 0
     - _UseWind: 0
-    - _VerticalFogSmoothness: 0
-    - _VerticalFogThreshold: -46.24
+    - _VerticalFogSmoothness: 0.5
+    - _VerticalFogThreshold: 0
     - _WindSpeed: 2.5
     - _WindStrength: 0.025
     - _WorkflowMode: 1
@@ -91,29 +104,16 @@ Material:
     - __dummy__: 0
     - __outline_gui_dummy__: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 1, g: 0.9843137, b: 0.99607843, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
-    - _OutlineColorVertex: {r: 0.38679248, g: 0.041963343, b: 0.041963343, a: 1}
+    - _HColor: {r: 1, g: 0.9843137, b: 0.99607843, a: 1}
+    - _OutlineColorVertex: {r: 0.3019608, g: 0.09019608, b: 0.09019608, a: 1}
     - _RimColor: {r: 0.8, g: 0.8, b: 0.8, a: 0.5}
-    - _SColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SColor: {r: 0.7921569, g: 0.75686276, b: 0.78431374, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SpecularColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _SubsurfaceColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _VerticalFogColor: {r: 1, g: 1, b: 1, a: 1}
+    - _VerticalFogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
---- !u!114 &1950714248879380410
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
