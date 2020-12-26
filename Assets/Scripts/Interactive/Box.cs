@@ -21,7 +21,7 @@ public class Box : Trigger
 
     public override void HandleTriggerStayEvent(Collider other)
     {
-        base.HandleTriggerEnterEvent(other);
+        base.HandleTriggerStayEvent(other);
 
         if (other.gameObject.GetComponent<PlayerMovement>().pState == PlayerState.Pushing)
         {

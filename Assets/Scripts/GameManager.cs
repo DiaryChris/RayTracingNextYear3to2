@@ -23,7 +23,7 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
     public static void Victory()
     {
-        //
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         Debug.Log("Victory");
     }
 }

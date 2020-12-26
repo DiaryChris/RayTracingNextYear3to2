@@ -25,8 +25,7 @@ public class Trigger : MonoBehaviour
     }
     public virtual void HandleTriggerStayEvent(Collider other)
     {
-        prevColor = trans.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
-        trans.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", Color.yellow);
+   
     }
 
     public virtual void HandleTriggerExitEvent(Collider other)
