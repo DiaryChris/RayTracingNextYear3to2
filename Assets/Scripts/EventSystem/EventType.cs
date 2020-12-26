@@ -6,7 +6,8 @@
     public enum EventType
     {
         //人物相关
-      
+         Die,
+         Reset,
         //HitEnemy,
         //捆绑
       
