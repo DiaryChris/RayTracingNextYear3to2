@@ -17,12 +17,14 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 1f;
     //旋转四元数
     Quaternion m_Rotation = Quaternion.identity;
+    
+    //动画
+    public  Animator m_Animator;
 
-    //Animator m_Animator;
     Rigidbody m_Rigidbody;
     void Start()
     {
-        //m_Animator = GetComponent<Animator>();
+      
         m_Rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -36,13 +38,15 @@ public class PlayerMovement : MonoBehaviour
         //向量单位化,防止对角移动时更快
         m_Movement.Normalize();
 
+
+
         //判断是否有输入
         bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
         bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
 
-        //bool isWalking = hasHorizontalInput || hasVerticalInput;
-
-        //m_Animator.SetBool("IsWalking", isWalking);
+        //动画
+        bool isWalking = hasHorizontalInput || hasVerticalInput;
+        m_Animator.SetBool("IsWalking", isWalking);
 
         //旋转向量
         Vector3 desiredForward =
