@@ -19,6 +19,7 @@ public class ShowText : MonoBehaviour
     {
         EventCenter.AddListener<string>(EventSys.EventType.ShowScore, Show);
   
+
     }
     /// <summary>
     /// 结束后移除监听
