@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public PlayerState pState;
+    public GameObject PushCol;
+
 
     //移动变量
     public float horizontal;
@@ -98,10 +100,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.F))
         {
             pState = PlayerState.Pushing;
+            PushCol.SetActive(true);
         }
         else if (!Mathf.Approximately(horizontal, 0f) || !Mathf.Approximately(vertical, 0f))
         {
             pState = PlayerState.Walking;
+            PushCol.SetActive(false);
         }
        
     }

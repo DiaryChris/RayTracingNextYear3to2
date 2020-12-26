@@ -12,8 +12,18 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
     public static void RestartScene()
     {
-        //场景加载
+        //当前场景加载
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
    
+    }
+
+
+    /// <summary>
+    /// 胜利时
+    /// </summary>
+    public static void Victory()
+    {
+        //
+        Debug.Log("Victory");
     }
 }
