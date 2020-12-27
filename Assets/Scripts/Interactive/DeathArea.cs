@@ -11,7 +11,7 @@ public class DeathArea : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            GameManager.RestartScene();
+            GameManager.instance.RestartScene();
         }
         if (other.gameObject.tag=="Interactive")
         {

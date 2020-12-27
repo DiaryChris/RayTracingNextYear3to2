@@ -13,7 +13,7 @@ public class Door : Trigger
 
         vicAnim.SetBool("isVictory", true);
 
-        GameManager.Victory();
+        GameManager.instance.Victory();
 
     }
 

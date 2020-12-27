@@ -12,17 +12,23 @@ public class LevelClearReceiver : MonoBehaviour
     public bool enableObject;
     public GameObject targetObject;
 
+    public bool playAnimation;
+    public Animation sourceAnimation;
+
+
     private MeshRenderer meshRenderer;
+    private Animator animator;
 
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     public void OnLevelClear()
     {
         // Change material to light one
-        if (changeMaterial)
+        if (changeMaterial && meshRenderer !=null)
         {
             meshRenderer.material = lightMaterial;
         }
@@ -32,6 +38,12 @@ public class LevelClearReceiver : MonoBehaviour
             targetObject.SetActive(true);
             // play animation here
         }
+
+        if(playAnimation && animator != null)
+        {
+            animator.Play(sourceAnimation.name);
+        }
+
     }
 
 

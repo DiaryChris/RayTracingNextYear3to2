@@ -21,7 +21,7 @@ public class LevelClearEffect : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (GameManager.instance.isVictory || Input.GetKeyDown(KeyCode.Q))
         {
             Debug.Log("Q Effect");
             isEmitting = true;
