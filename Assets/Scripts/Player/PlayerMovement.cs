@@ -16,13 +16,13 @@ public class PlayerMovement : MonoBehaviour
     public PlayerState pState;
     public GameObject PushCol;
     public PlayableDirector lightOn;
-     
+
 
     //移动变量
     public float horizontal;
     public float vertical;
     Vector3 m_Movement;
-     public  bool canMove = true;
+    public bool canMove = true;
 
     [Header("旋转速度")]
     public float turnSpeed = 1f;
@@ -30,14 +30,17 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 1f;
     //旋转四元数
     Quaternion m_Rotation = Quaternion.identity;
-    
+
     //动画
-    public  Animator m_Animator;
+    public Animator m_Animator;
 
     Rigidbody m_Rigidbody;
+    AudioSource m_AudioSource;
+
     void Start()
     {
-      
+
+        m_AudioSource = GetComponent<AudioSource>();
         m_Rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -47,7 +50,24 @@ public class PlayerMovement : MonoBehaviour
 
         bool isPushing = Input.GetKey(KeyCode.F);
         m_Animator.SetBool("IsPushing", isPushing);
-    }     
+
+        Debug.Log(pState);
+
+        if (pState == PlayerState.Walking)
+        {
+            if (!m_AudioSource.isPlaying)
+            {
+                m_AudioSource.Play();
+            }
+        }
+        else
+        {
+            if (m_AudioSource.isPlaying)
+            {
+                m_AudioSource.Stop();
+            }
+        }
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -71,8 +91,8 @@ public class PlayerMovement : MonoBehaviour
         bool isWalking = hasHorizontalInput || hasVerticalInput;
         m_Animator.SetBool("IsWalking", isWalking);
 
-      
-   
+
+
 
 
         //旋转向量
@@ -88,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Move();
         }
-       
+
     }
 
 
@@ -130,7 +150,7 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-          
+
 
         }
     }
@@ -145,8 +165,10 @@ public class PlayerMovement : MonoBehaviour
         else if (!Mathf.Approximately(horizontal, 0f) || !Mathf.Approximately(vertical, 0f))
         {
             pState = PlayerState.Walking;
+
             PushCol.SetActive(false);
         }
-       
+
+
     }
 }
