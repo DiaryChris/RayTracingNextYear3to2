@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelClearEffect : MonoBehaviour
 {
     public float emitSpeed = 100f;
+    public List<Light> lights;
 
     private SphereCollider trigger;
     private bool isEmitting;
@@ -21,9 +22,11 @@ public class LevelClearEffect : MonoBehaviour
         {
             Debug.Log("Q Effect");
             isEmitting = true;
+            TurnOnLights();
         }
         if (isEmitting)
         {
+            
             EmitEffect(Time.deltaTime);
         }
     }
@@ -33,15 +36,26 @@ public class LevelClearEffect : MonoBehaviour
         trigger.radius += emitSpeed * dt;
     }
 
+
+    private void TurnOnLights()
+    {
+        foreach(Light light in lights)
+        {
+            light.gameObject.SetActive(true);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("new trigger enter, name:" + other.gameObject.name);
+        //Debug.Log("new trigger enter, name:" + other.gameObject.name);
 
-        MeshRenderer targetMesh = other.GetComponent<MeshRenderer>();
-        if (targetMesh)
+        LevelClearReceiver receiver = other.GetComponent<LevelClearReceiver>();
+        if (receiver == null)
         {
-            targetMesh.material.SetColor("_BaseColor", Color.black);
+            return;
         }
+
+        receiver.OnLevelClear();
     }
 
 }
