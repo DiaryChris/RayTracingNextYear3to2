@@ -31,8 +31,7 @@ public class GameManager : MonoSingleton<GameManager>
     }
 
 
-
-    //音乐播放
+    #region audio
     public AudioClip BGM;
     public AudioSource BGMPlayer;
 
@@ -62,5 +61,12 @@ public class GameManager : MonoSingleton<GameManager>
     {
         BGMPlayer.Stop();
     }
+    #endregion
 
+
+    private void Start()
+    {
+        SetBGM(BGM);
+        PlayBGM();
+    }
 }
