@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class LevelClearEffect : MonoBehaviour
 {
     public float emitSpeed = 100f;
     public float emitRadius = 1000f;
-    public List<Light> lights;
+
+    public PlayableDirector levelCleanDirector;
 
     private SphereCollider trigger;
     private bool isEmitting;
@@ -23,7 +25,7 @@ public class LevelClearEffect : MonoBehaviour
         {
             Debug.Log("Q Effect");
             isEmitting = true;
-            
+            levelCleanDirector.Play();
         }
         if (isEmitting)
         {
