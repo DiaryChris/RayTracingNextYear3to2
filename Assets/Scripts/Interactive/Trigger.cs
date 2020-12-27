@@ -9,6 +9,7 @@ public class Trigger : MonoBehaviour
     public Transform trans;
     
     private Color prevColor;
+    private float prevOutlineWidth;
 
     private void Start()
     {
@@ -20,8 +21,12 @@ public class Trigger : MonoBehaviour
 
     public virtual void HandleTriggerEnterEvent(Collider other)
     {
-        prevColor = trans.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
-        trans.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", Color.yellow);
+        //prevColor = trans.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
+        //trans.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", new Color32(225, 180, 64, 255));
+
+        prevOutlineWidth = trans.GetComponent<MeshRenderer>().material.GetFloat("_OutlineWidth");
+        trans.GetComponent<MeshRenderer>().material.SetFloat("_OutlineWidth", 1.0f);
+        trans.GetComponent<MeshRenderer>().material.SetInt("_UseRim", 1);
     }
     public virtual void HandleTriggerStayEvent(Collider other)
     {
@@ -30,7 +35,10 @@ public class Trigger : MonoBehaviour
 
     public virtual void HandleTriggerExitEvent(Collider other)
     {
-        trans.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", prevColor);
+        //trans.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", prevColor);
+        trans.GetComponent<MeshRenderer>().material.SetFloat("_OutlineWidth", prevOutlineWidth);
+        trans.GetComponent<MeshRenderer>().material.SetInt("_UseRim", 0);
+
     }
 
 
