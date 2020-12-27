@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public float horizontal;
     public float vertical;
     Vector3 m_Movement;
-    bool canMove = true;
+     public  bool canMove = true;
 
     [Header("旋转速度")]
     public float turnSpeed = 1f;
@@ -106,38 +106,33 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     void CheckKnok()
     {
-        //if (true)
-        //{
 
-        
+        //开运动
+        if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.knokModified")
+            && m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.95f)
+        {
+            Debug.Log("Over");
+            canMove = true;
+        }
+
         ///开动画，锁运动
+        if (canMove)
+        {
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                m_Animator.SetBool("IsKnok", true);
+                m_Animator.Play("knokModified", 0, 0);
                 canMove = false;
-             
-                if (m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.2f)
+
+                if (m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.3f)
                 {
                     lightOn.Play();
-                } 
+                }
             }
-            //关动画
-                  if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.knokModified")
-                         && m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.1f)
-                     {
-           
-                          m_Animator.SetBool("IsKnok", false);
-           
-                     }
-                 //开运动
-                 if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.knokModified")
-                     && m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.95f)
-                 {
-                    Debug.Log("Over");
-                     canMove = true;
-                 }
-        //}
 
+          
+
+        }
     }
 
     void CheckState()
