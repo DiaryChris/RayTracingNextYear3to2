@@ -13,7 +13,7 @@ public class LevelClearReceiver : MonoBehaviour
     public GameObject targetObject;
 
     public bool playAnimation;
-    public Animation sourceAnimation;
+    public string animationName;
 
 
     private MeshRenderer meshRenderer;
@@ -41,7 +41,7 @@ public class LevelClearReceiver : MonoBehaviour
 
         if(playAnimation && animator != null)
         {
-            animator.Play(sourceAnimation.name);
+            animator.Play(animationName);
         }
 
     }
