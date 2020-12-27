@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 035e24644726fa941a9673af50b7a72c
+guid: 6c7b6e79a51ae9845a91bef64d5a3eb0
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -7,7 +7,7 @@ ModelImporter:
       74: 1827226128182048838
     second: jump
   - first:
-      74: -998496362607748373
+      74: -5252816984213320552
     second: idle
   externalObjects: {}
   materials:
@@ -42,7 +42,7 @@ ModelImporter:
       takeName: Take 001
       internalID: 0
       firstFrame: 1
-      lastFrame: 70
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -70,8 +70,8 @@ ModelImporter:
       name: idle
       takeName: Take 001
       internalID: 0
-      firstFrame: 70
-      lastFrame: 101
+      firstFrame: 42
+      lastFrame: 78
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
