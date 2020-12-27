@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isVictory: 0
   BGM: {fileID: 8300000, guid: 86309501055cb544cb08536862f7f86b, type: 3}
+  VictoryBGM: {fileID: 8300000, guid: c3ec19318f417ab4d8b67d75affe9895, type: 3}
   BGMPlayer: {fileID: 4832297838425642296}
 --- !u!82 &4832297838425642296
 AudioSource:

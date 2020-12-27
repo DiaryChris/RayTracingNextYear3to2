@@ -9,6 +9,13 @@ public class GameManager : MonoSingleton<GameManager>
 
     public bool isVictory = false;
 
+
+
+    public AudioClip BGM;
+    public AudioClip VictoryBGM;
+    public AudioSource BGMPlayer;
+
+
     /// <summary>
     /// （死亡时）重新加载
     /// </summary>
@@ -27,25 +34,27 @@ public class GameManager : MonoSingleton<GameManager>
     {
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         isVictory = true;
+        SetBGM(VictoryBGM);
+        if (!BGMPlayer.isPlaying)
+        {
+            PlayBGM();
+        }
         Debug.Log("Victory");
     }
 
 
     #region audio
-    public AudioClip BGM;
-    public AudioSource BGMPlayer;
 
 
     public void SetBGM(AudioClip clip)
     {
-        BGM = clip;
+        BGMPlayer.clip = clip;
     }
 
     //Audio Play
     public void PlayBGM()
     {
         //Debug.Log("BGM Play");
-        BGMPlayer.clip = BGM;
         BGMPlayer.Play();
     }
 
