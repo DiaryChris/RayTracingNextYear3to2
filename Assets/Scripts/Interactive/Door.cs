@@ -5,14 +5,16 @@ using UnityEngine;
 public class Door : Trigger
 {
     // Start is called before the first frame update
-    void Start()
+    public Animator vicAnim;
+
+    public override void HandleTriggerStayEvent(Collider other)
     {
-        
+        base.HandleTriggerStayEvent(other);
+
+        vicAnim.SetBool("isVictory", true);
+
+        GameManager.Victory();
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

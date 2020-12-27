@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public enum PlayerState
 {
@@ -14,13 +15,14 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     public PlayerState pState;
     public GameObject PushCol;
-
+    public PlayableDirector lightOn;
+     
 
     //移动变量
     public float horizontal;
     public float vertical;
     Vector3 m_Movement;
-
+    bool canMove = true;
 
     [Header("旋转速度")]
     public float turnSpeed = 1f;
@@ -81,7 +83,12 @@ public class PlayerMovement : MonoBehaviour
         //转换为四元数
         m_Rotation = Quaternion.LookRotation(desiredForward);
 
-        Move();
+        CheckKnok();
+        if (canMove)
+        {
+            Move();
+        }
+       
     }
 
 
@@ -94,6 +101,44 @@ public class PlayerMovement : MonoBehaviour
         m_Rigidbody.MoveRotation(m_Rotation);
     }
 
+    /// <summary>
+    /// 检测敲地板
+    /// </summary>
+    void CheckKnok()
+    {
+        //if (true)
+        //{
+
+        
+        ///开动画，锁运动
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                m_Animator.SetBool("IsKnok", true);
+                canMove = false;
+             
+                if (m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.2f)
+                {
+                    lightOn.Play();
+                } 
+            }
+            //关动画
+                  if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.knokModified")
+                         && m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.1f)
+                     {
+           
+                          m_Animator.SetBool("IsKnok", false);
+           
+                     }
+                 //开运动
+                 if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.knokModified")
+                     && m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.95f)
+                 {
+                    Debug.Log("Over");
+                     canMove = true;
+                 }
+        //}
+
+    }
 
     void CheckState()
     {
