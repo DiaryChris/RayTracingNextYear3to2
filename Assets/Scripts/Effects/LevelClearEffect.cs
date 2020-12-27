@@ -40,11 +40,6 @@ public class LevelClearEffect : MonoBehaviour
     }
 
 
-    private void TurnOnLights()
-    {
-
-    }
-
 
 
     private void OnTriggerEnter(Collider other)

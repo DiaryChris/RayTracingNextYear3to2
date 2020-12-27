@@ -28,6 +28,7 @@ public class LevelClearReceiver : MonoBehaviour
 
         if (playAnimation)
         {
+            gameObject.SetActive(true);
             // play animation here
         }
     }
