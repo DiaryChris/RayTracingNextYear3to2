@@ -1045,6 +1045,16 @@ PrefabInstance:
       propertyPath: testMat
       value: 
       objectReference: {fileID: 2100000, guid: 81ad386b41bb80b4b9da9b2116cfd7af, type: 2}
+    - target: {fileID: 2215683680821926454, guid: 1ba2c5664a6c59646be5735d0f2c3b16,
+        type: 3}
+      propertyPath: lights.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215683680821926454, guid: 1ba2c5664a6c59646be5735d0f2c3b16,
+        type: 3}
+      propertyPath: lights.Array.data[0]
+      value: 
+      objectReference: {fileID: 1251688442}
     - target: {fileID: 2215683680821926455, guid: 1ba2c5664a6c59646be5735d0f2c3b16,
         type: 3}
       propertyPath: m_RootOrder
@@ -4056,7 +4066,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 21.98
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
