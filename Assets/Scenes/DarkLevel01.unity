@@ -2372,6 +2372,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 498062947316379943, guid: b546257321e130849a2a39db61e2a31c,
+        type: 3}
+      propertyPath: highlightColor.b
+      value: 0.4292453
+      objectReference: {fileID: 0}
+    - target: {fileID: 498062947316379943, guid: b546257321e130849a2a39db61e2a31c,
+        type: 3}
+      propertyPath: highlightColor.g
+      value: 0.7854133
+      objectReference: {fileID: 0}
+    - target: {fileID: 498062947316379943, guid: b546257321e130849a2a39db61e2a31c,
+        type: 3}
+      propertyPath: highlightColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 498062947316379943, guid: b546257321e130849a2a39db61e2a31c,
+        type: 3}
+      propertyPath: highlightOutlineColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498062947316379943, guid: b546257321e130849a2a39db61e2a31c,
+        type: 3}
+      propertyPath: highlightOutlineColor.g
+      value: 0.8808756
+      objectReference: {fileID: 0}
+    - target: {fileID: 498062947316379943, guid: b546257321e130849a2a39db61e2a31c,
+        type: 3}
+      propertyPath: highlightOutlineColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 498062948932182926, guid: b546257321e130849a2a39db61e2a31c,
         type: 3}
       propertyPath: m_RootOrder
