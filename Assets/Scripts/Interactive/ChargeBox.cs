@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChargeBox : MonoBehaviour
 {
+    public Transform Bread;
 
 
     private void OnTriggerEnter(Collider other)
@@ -11,7 +12,7 @@ public class ChargeBox : MonoBehaviour
         if (other.gameObject.CompareTag("Interactive"))
         {
             IChargeable it = other.transform.GetComponent<IChargeable>();
-            it?.Charging();
+            it?.Charging(Bread);
             Debug.Log("Charge");
         }
     }
@@ -21,7 +22,7 @@ public class ChargeBox : MonoBehaviour
         if (other.gameObject.CompareTag("Interactive"))
         {
             INoPower it = other.transform.GetComponent<INoPower>();
-            it?.NoPower();
+            it?.NoPower(Bread);
             Debug.Log("NoPower");
         }
     }

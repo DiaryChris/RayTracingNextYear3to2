@@ -4,10 +4,10 @@ using UnityEngine;
 
 public interface IChargeable 
 {
-    void Charging();
+    void Charging(Transform Ts);
 }
 
 public interface INoPower
 {
-    void NoPower();
+    void NoPower(Transform Ts);
 }

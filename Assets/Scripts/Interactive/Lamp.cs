@@ -9,13 +9,13 @@ public class Lamp : MonoBehaviour,IChargeable,INoPower
 
     
 
-    public void Charging()
+    public void Charging(Transform Ts)
     {
         Debug.Log("亮灯");
         light.SetActive(true);
     }
 
-    public void NoPower()
+    public void NoPower(Transform Ts)
     {
         Debug.Log("关灯");
         light.SetActive(false);
