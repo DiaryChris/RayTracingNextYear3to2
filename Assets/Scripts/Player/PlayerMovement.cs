@@ -51,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
         bool isPushing = Input.GetKey(KeyCode.F);
         m_Animator.SetBool("IsPushing", isPushing);
 
-        Debug.Log(pState);
 
         //if (pState == PlayerState.Walking)
         //{
