@@ -9,7 +9,8 @@ public class LevelClearReceiver : MonoBehaviour
     public Material darkMaterial;
     public Material lightMaterial;
 
-    public bool playAnimation;
+    public bool enableObject;
+    public GameObject targetObject;
 
     private MeshRenderer meshRenderer;
 
@@ -26,9 +27,9 @@ public class LevelClearReceiver : MonoBehaviour
             meshRenderer.material = lightMaterial;
         }
 
-        if (playAnimation)
+        if (enableObject && targetObject!= null)
         {
-            gameObject.SetActive(true);
+            targetObject.SetActive(true);
             // play animation here
         }
     }
