@@ -53,20 +53,20 @@ public class PlayerMovement : MonoBehaviour
 
         Debug.Log(pState);
 
-        if (pState == PlayerState.Walking)
-        {
-            if (!m_AudioSource.isPlaying)
-            {
-                m_AudioSource.Play();
-            }
-        }
-        else
-        {
-            if (m_AudioSource.isPlaying)
-            {
-                m_AudioSource.Stop();
-            }
-        }
+        //if (pState == PlayerState.Walking)
+        //{
+        //    if (!m_AudioSource.isPlaying)
+        //    {
+        //        m_AudioSource.Play();
+        //    }
+        //}
+        //else
+        //{
+        //    if (m_AudioSource.isPlaying)
+        //    {
+        //        m_AudioSource.Stop();
+        //    }
+        //}
     }
 
     // Update is called once per frame
@@ -87,8 +87,26 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        //动画
+        //动画\声音
         bool isWalking = hasHorizontalInput || hasVerticalInput;
+        if (isWalking)
+        {
+            if (!m_AudioSource.isPlaying)
+            {
+                m_AudioSource.Play();
+            }
+        }
+        else
+        {
+            {
+                if (m_AudioSource.isPlaying)
+                {
+                    m_AudioSource.Stop();
+                }
+            }
+        }
+
+
         m_Animator.SetBool("IsWalking", isWalking);
 
 
