@@ -103,7 +103,7 @@ Material:
     - _VerticalFogSmoothness: 0.5
     - _VerticalFogThreshold: 0
     - _WindSpeed: 2.5
-    - _WindStrength: 0.025
+    - _WindStrength: 0.067
     - _WorkflowMode: 1
     - _ZWrite: 1
     - __dummy__: 0
