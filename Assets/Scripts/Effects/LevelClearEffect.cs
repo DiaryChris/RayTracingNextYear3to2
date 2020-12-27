@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelClearEffect : MonoBehaviour
 {
     public float emitSpeed = 100f;
+    public float emitRadius = 1000f;
     public List<Light> lights;
 
     private SphereCollider trigger;
@@ -22,7 +23,7 @@ public class LevelClearEffect : MonoBehaviour
         {
             Debug.Log("Q Effect");
             isEmitting = true;
-            TurnOnLights();
+            
         }
         if (isEmitting)
         {
@@ -39,11 +40,10 @@ public class LevelClearEffect : MonoBehaviour
 
     private void TurnOnLights()
     {
-        foreach(Light light in lights)
-        {
-            light.gameObject.SetActive(true);
-        }
+
     }
+
+
 
     private void OnTriggerEnter(Collider other)
     {
