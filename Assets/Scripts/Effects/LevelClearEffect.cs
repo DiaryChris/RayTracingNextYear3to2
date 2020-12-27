@@ -9,6 +9,7 @@ public class LevelClearEffect : MonoBehaviour
     public float emitRadius = 1000f;
 
     public PlayableDirector levelCleanDirector;
+    public PlayableDirector lookBackDirector;
 
     private SphereCollider trigger;
     private bool isEmitting;
@@ -26,6 +27,7 @@ public class LevelClearEffect : MonoBehaviour
             Debug.Log("Q Effect");
             isEmitting = true;
             levelCleanDirector.Play();
+            lookBackDirector.Play();
         }
         if (isEmitting)
         {

@@ -1,5 +1,57 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1271923289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1271923290}
+  - component: {fileID: 1271923291}
+  m_Layer: 0
+  m_Name: LookBackTimeline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1271923290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271923289}
+  m_LocalRotation: {x: 0.031122342, y: 0.0120188, z: -0.004272938, w: 0.99943423}
+  m_LocalPosition: {x: -193.4798, y: -279.39474, z: 211.72147}
+  m_LocalScale: {x: 66.666664, y: 66.666664, z: 66.66667}
+  m_Children: []
+  m_Father: {fileID: 2767444921795760408}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &1271923291
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271923289}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 406fc0397b8f26f40b8a28990d6f1632, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 0
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -7438221463823915709, guid: 406fc0397b8f26f40b8a28990d6f1632, type: 2}
+    value: {fileID: 5932610210665735822}
+  - key: {fileID: 5568492519988679270, guid: 406fc0397b8f26f40b8a28990d6f1632, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1856966913
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +268,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 651574287d0aedf45817bae1d15d2dee, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 364ea4da31640f440a018cd6a1813241, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -545,6 +597,11 @@ PrefabInstance:
       propertyPath: emitSpeed
       value: 400
       objectReference: {fileID: 0}
+    - target: {fileID: 2215683680821926454, guid: 1ba2c5664a6c59646be5735d0f2c3b16,
+        type: 3}
+      propertyPath: lookBackDirector
+      value: 
+      objectReference: {fileID: 1271923291}
     - target: {fileID: 2215683680821926454, guid: 1ba2c5664a6c59646be5735d0f2c3b16,
         type: 3}
       propertyPath: levelCleanDirector
