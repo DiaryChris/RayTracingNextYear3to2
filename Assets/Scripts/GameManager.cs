@@ -9,8 +9,6 @@ public class GameManager : MonoSingleton<GameManager>
 
     public bool isVictory = false;
 
-
-
     public AudioClip BGM;
     public AudioClip VictoryBGM;
     public AudioSource BGMPlayer;
@@ -24,6 +22,16 @@ public class GameManager : MonoSingleton<GameManager>
         //当前场景加载
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
    
+    }
+
+    /// <summary>
+    /// （死亡时）重新加载
+    /// </summary>
+    public void LoadNextScene()
+    {
+        //当前场景加载
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 
 
@@ -77,5 +85,14 @@ public class GameManager : MonoSingleton<GameManager>
     {
         SetBGM(BGM);
         PlayBGM();
+    }
+
+    private void Update()
+    {
+        // EXIT Game
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
